@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "npx google-closure-compiler --compilation_level ADVANCED --language_out ECMASCRIPT5 --js \"${file}\" | echo -n \"(function(){\"`cat`}\")()\" | node -p \"encodeURIComponent(require('fs').readFileSync(0))\" | echo -n \"javascript:\"`cat` > \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.txt\"",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
