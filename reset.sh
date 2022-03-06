@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -v
+
 rm -r node_modules/*
 
 rm package.json \
